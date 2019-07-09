@@ -1,7 +1,7 @@
 import xlrd
 
 
-def get_line_from_xls(path, row):
+def line_from_xls(path, row):
     work_book = xlrd.open_workbook(path)
     sheet = work_book.sheet_by_index(0)
     print(sheet.row(row))

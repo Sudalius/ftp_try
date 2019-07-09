@@ -29,7 +29,7 @@ ftp.close()
 #Readers functions calls
 cvs_reader.string_from_csv(variables.addresses, line_number=2)
 cvs_reader.dictionary_from_csv(variables.addresses, keys_column=1, values_column=2)
-xlsx_reader.get_line_from_xls(variables.capitals, row=2)
+xlsx_reader.line_from_xls(variables.capitals, row=2)
 xlsx_reader.dictionary_from_xls(variables.capitals, rows_quantity=5, keys_column=0, values_column=1)
 
 
