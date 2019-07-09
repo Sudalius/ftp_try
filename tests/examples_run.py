@@ -1,5 +1,6 @@
+from tests.readers import cvs_reader, xlsx_reader
+from tests.variables import variables
 from ftplib import FTP
-from tests import cvs_reader
 
 # Upload file to FTP
 ftp = FTP("ftp.dlptest.com")
@@ -25,6 +26,10 @@ with open(savedFileName, 'wb') as f:
 ftp.close()
 
 
-#Reads CSV file and return 1st string
-cvs_reader.string_from_csv("../tests/files_store/addresses.csv")
+#Readers functions calls
+cvs_reader.string_from_csv(variables.addresses, line_number=2)
+cvs_reader.dictionary_from_csv(variables.addresses, keys_column=1, values_column=2)
+xlsx_reader.get_line_from_xls(variables.capitals, row=2)
+xlsx_reader.dictionary_from_xls(variables.capitals, rows_quantity=5, keys_column=0, values_column=1)
+
 
